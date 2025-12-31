@@ -1,47 +1,61 @@
 import BusinessCard from "./BusinessCard";
 import { 
-  Cpu, 
-  Cloud, 
-  ShieldCheck, 
+  MonitorCog,
   Coins, 
-  Leaf 
+  Leaf, 
+  Binary,
+  HousePlus,
+  Brain
 } from "lucide-react";
 
 const businesses = [
   {
-    name: "MaizeAI",
-    description: "Next-generation artificial intelligence solutions for enterprise automation and decision-making systems.",
-    icon: Cpu,
-    category: "Artificial Intelligence",
+    name: "Sales Territory Manager",
+    description: "A customer relationship management software built for travelling salesmen by salesmen.",
+    icon: MonitorCog,
+    category: "Sales",
     color: "#FF6B35",
+    link: "https://studio-1-backend--studio-3294958671-4c5c0.us-central1.hosted.app/main"
   },
   {
-    name: "MaizeCloud",
-    description: "Scalable cloud infrastructure and managed services for businesses of all sizes.",
-    icon: Cloud,
-    category: "Cloud Computing",
+    name: "RealGen",
+    description: "A unique lead generation and pipeline management software for real estate agents.",
+    icon: HousePlus,
+    category: "Real Estate",
     color: "#4ECDC4",
+    link: "https://realgen.io"
   },
   {
-    name: "MaizeSecure",
-    description: "Comprehensive cybersecurity solutions protecting organizations from evolving digital threats.",
-    icon: ShieldCheck,
-    category: "Cybersecurity",
+    name: "Torque Calculator",
+    description: "A torque calculator to help you determine the correct torque for fastening.",
+    icon: Binary,
+    category: "Computing",
     color: "#A855F7",
+    link: "https://maizesecure.com"
   },
   {
-    name: "MaizeFinance",
-    description: "Innovative fintech platforms enabling seamless digital payments and financial services.",
+    name: "BETA: North Port Auction",
+    description: "Developing a local marketplace for secondary market items. Testing in North Port Florida.",
     icon: Coins,
-    category: "Financial Technology",
+    category: "Local",
     color: "#FBBF24",
+    link: "https://maizefinance.com"
   },
   {
-    name: "MaizeGreen",
-    description: "Sustainable technology solutions driving environmental innovation and clean energy adoption.",
+    name: "BETA: Industrial Chem",
+    description: "Developing a marketplace for industrial chemicals. Straight forward pricing and reliable delivery.",
     icon: Leaf,
-    category: "CleanTech",
-    color: "#22C55E",
+    category: "Marketplace",
+    color: "#22C55E", 
+    link: "https://maizegreen.com"  
+  },
+  {
+    name: "AI Consulting",
+    description: "Developing and implementing AI solutions for traditional small businesses.",
+    icon: Brain,
+    category: "Software Development",
+    color: "#3B82F6", 
+    link: "https://maizegreen.com"  
   },
 ];
 

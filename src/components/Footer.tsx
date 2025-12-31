@@ -17,29 +17,8 @@ const Footer = () => {
               </span>
             </div>
             <p className="text-muted-foreground max-w-md mb-6">
-              A technology holding company cultivating innovation across AI, cloud computing, 
-              fintech, cybersecurity, and sustainable technology.
+              A technology holding company cultivating innovation among multiple industries. We bring modern technical expertise to established businesses.
             </p>
-            <div className="flex gap-4">
-              <a 
-                href="#" 
-                className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center text-muted-foreground hover:text-foreground hover:bg-secondary/80 transition-smooth"
-              >
-                <Linkedin className="w-5 h-5" />
-              </a>
-              <a 
-                href="#" 
-                className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center text-muted-foreground hover:text-foreground hover:bg-secondary/80 transition-smooth"
-              >
-                <Twitter className="w-5 h-5" />
-              </a>
-              <a 
-                href="#" 
-                className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center text-muted-foreground hover:text-foreground hover:bg-secondary/80 transition-smooth"
-              >
-                <Github className="w-5 h-5" />
-              </a>
-            </div>
           </div>
 
           {/* Quick Links */}
@@ -58,11 +37,6 @@ const Footer = () => {
               </li>
               <li>
                 <a href="#" className="text-muted-foreground hover:text-foreground transition-smooth">
-                  Careers
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-muted-foreground hover:text-foreground transition-smooth">
                   News & Updates
                 </a>
               </li>
@@ -75,15 +49,15 @@ const Footer = () => {
             <ul className="space-y-3">
               <li className="flex items-center gap-3 text-muted-foreground">
                 <Mail className="w-5 h-5 text-primary" />
-                <span>hello@maizetech.com</span>
+                <span>brownconner15@gmail.com</span>
               </li>
               <li className="flex items-center gap-3 text-muted-foreground">
                 <Phone className="w-5 h-5 text-primary" />
-                <span>+1 (555) 123-4567</span>
+                <span>+1 (319) 541-3291</span>
               </li>
               <li className="flex items-start gap-3 text-muted-foreground">
                 <MapPin className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                <span>123 Innovation Drive<br />San Francisco, CA 94105</span>
+                <span>Des Moines, Iowa</span>
               </li>
             </ul>
           </div>
@@ -116,7 +90,7 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="flex flex-col md:flex-row items-center justify-between gap-4 pt-8 border-t border-border">
           <p className="text-muted-foreground text-sm">
-            © 2024 MaizeTech. All rights reserved.
+            © 2025 MaizeTech. All rights reserved.
           </p>
           <div className="flex gap-6">
             <a href="#" className="text-muted-foreground hover:text-foreground text-sm transition-smooth">

@@ -9,7 +9,7 @@ const values = [
   {
     icon: Lightbulb,
     title: "Innovation First",
-    description: "We embrace cutting-edge technologies and unconventional approaches to drive progress.",
+    description: "We embrace cutting-edge technologies and unconventional approaches to enhance traditional businesses.",
   },
   {
     icon: Users,
