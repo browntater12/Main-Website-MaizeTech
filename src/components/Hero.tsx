@@ -57,12 +57,12 @@ const Hero = () => {
               <div className="text-sm text-muted-foreground mt-1">Active Ventures</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-gradient">100+</div>
-              <div className="text-sm text-muted-foreground mt-1">Team Members</div>
+              <div className="text-3xl md:text-4xl font-bold text-gradient">30+</div>
+              <div className="text-sm text-muted-foreground mt-1">Applications</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-gradient">10M+</div>
-              <div className="text-sm text-muted-foreground mt-1">Users Served</div>
+              <div className="text-3xl md:text-4xl font-bold text-gradient">7</div>
+              <div className="text-sm text-muted-foreground mt-1">Years of Experience</div>
             </div>
           </div>
         </div>
