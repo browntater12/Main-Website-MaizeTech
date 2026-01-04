@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import emailjs from "@emailjs/browser";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -22,6 +23,12 @@ const Contact = () => {
     document.title = "Contact Us - MaizeTech";
     // Scroll to top when page loads
     window.scrollTo({ top: 0, behavior: "smooth" });
+    
+    // Initialize EmailJS with public key
+    const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY || '';
+    if (publicKey) {
+      emailjs.init(publicKey);
+    }
   }, []);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -35,40 +42,41 @@ const Contact = () => {
     setSubmitStatus({ type: null, message: '' });
     
     try {
-      // Get API URL from environment variable or use default
-      const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:3001';
+      // Get EmailJS configuration from environment variables
+      const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID || '';
+      const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID || '';
+      const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY || '';
       
-      const response = await fetch(`${apiUrl}/api/send-sms`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      });
-
-      const data = await response.json();
-
-      if (response.ok && data.success) {
-        // Success
-        setSubmitStatus({ 
-          type: 'success', 
-          message: "Thank you for your message! We'll get back to you soon." 
-        });
-        // Reset form after successful submission
-        setFormData({ name: "", email: "", subject: "", information: "" });
-      } else {
-        // Error from API
-        setSubmitStatus({ 
-          type: 'error', 
-          message: data.error || 'Failed to send message. Please try again.' 
-        });
+      if (!serviceId || !templateId || !publicKey) {
+        throw new Error('EmailJS is not configured. Please set environment variables.');
       }
+      
+      // Prepare template parameters
+      const templateParams = {
+        to_email: '5157828321@vtext.com',
+        from_name: formData.name,
+        from_email: formData.email,
+        subject: formData.subject,
+        message: formData.information,
+        reply_to: formData.email,
+      };
+      
+      // Send email via EmailJS
+      await emailjs.send(serviceId, templateId, templateParams, publicKey);
+      
+      // Success
+      setSubmitStatus({ 
+        type: 'success', 
+        message: "Thank you for your message! We'll get back to you soon." 
+      });
+      
+      // Reset form after successful submission
+      setFormData({ name: "", email: "", subject: "", information: "" });
     } catch (error) {
-      // Network or other error
-      console.error('Error submitting form:', error);
+      console.error('Error sending email:', error);
       setSubmitStatus({ 
         type: 'error', 
-        message: 'Unable to send message. Please check your connection and try again.' 
+        message: 'Failed to send message. Please try again or email us directly at brownconner15@gmail.com' 
       });
     } finally {
       setIsSubmitting(false);
