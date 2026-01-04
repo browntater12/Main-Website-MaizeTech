@@ -10,6 +10,27 @@ import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
 
+// Get base path from Vite (set during build based on vite.config.ts)
+// For GitHub Pages project pages: /repo-name/
+// For user pages or local dev: /
+// Normalize to ensure it starts and ends with /
+let basePath = import.meta.env.BASE_URL || '/';
+
+// Fallback: detect base path from current URL if on GitHub Pages
+if (basePath === '/' && typeof window !== 'undefined' && window.location.hostname.includes('github.io')) {
+  const pathParts = window.location.pathname.split('/').filter(Boolean);
+  // If we're on GitHub Pages and the first path segment exists and isn't a known route
+  if (pathParts.length > 0) {
+    const knownRoutes = ['contact', 'index.html', '404.html'];
+    if (!knownRoutes.includes(pathParts[0])) {
+      basePath = `/${pathParts[0]}/`;
+    }
+  }
+}
+
+if (!basePath.startsWith('/')) basePath = '/' + basePath;
+if (!basePath.endsWith('/') && basePath !== '/') basePath = basePath + '/';
+
 // Component to handle GitHub Pages redirect
 const GitHubPagesRedirect = () => {
   const location = useLocation();
@@ -23,7 +44,7 @@ const GitHubPagesRedirect = () => {
       // Convert the redirect path back to a normal path
       // The 404.html script converts /contact to ?/contact
       // We need to convert it back to /contact
-      const path = '/' + redirectPath.replace(/~and~/g, '&');
+      const path = basePath + redirectPath.replace(/~and~/g, '&').replace(/^\/+/, '');
       const newSearch = location.search.replace(/\/[^&]*/, '');
       const newUrl = path + newSearch + location.hash;
       window.history.replaceState(null, '', newUrl);
@@ -39,7 +60,7 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <BrowserRouter>
+      <BrowserRouter basename={basePath}>
         <GitHubPagesRedirect />
         <Routes>
           <Route path="/" element={<Index />} />
