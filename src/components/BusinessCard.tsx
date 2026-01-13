@@ -7,18 +7,12 @@ interface BusinessCardProps {
   icon: LucideIcon;
   category: string;
   color: string;
-  link: string;
   delay?: number;
 }
 
-const BusinessCard = ({ name, description, icon: Icon, category, color, link, delay = 0 }: BusinessCardProps) => {
-  const handleClick = () => {
-    window.open(link, '_blank', 'noopener,noreferrer');
-  };
-
+const BusinessCard = ({ name, description, icon: Icon, category, color, delay = 0 }: BusinessCardProps) => {
   return (
     <div 
-      onClick={handleClick}
       className="group relative bg-gradient-card rounded-2xl p-8 border border-border/50 hover:border-primary/30 transition-smooth glow-effect shadow-card hover:shadow-card-hover cursor-pointer animate-fade-up opacity-0"
       style={{ animationDelay: `${delay}ms` }}
     >
