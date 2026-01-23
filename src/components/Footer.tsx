@@ -2,6 +2,7 @@ import { Mail, MapPin, Phone, Linkedin, Twitter, Github } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const Footer = () => {
+
   return (
     <footer id="contact" className="py-20 bg-card border-t border-border">
       <div className="container mx-auto px-6">
