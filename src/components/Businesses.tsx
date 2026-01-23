@@ -23,7 +23,7 @@ const businesses = [
     icon: HousePlus,
     category: "Real Estate",
     color: "#4ECDC4",
-    link: "https://realgen.io"
+    link: "#"
   },
   {
     name: "Torque Calculator",
@@ -31,7 +31,7 @@ const businesses = [
     icon: Binary,
     category: "Computing",
     color: "#A855F7",
-    link: "https://maizesecure.com"
+    link: "#"
   },
   {
     name: "BETA: North Port Auction",
@@ -39,7 +39,7 @@ const businesses = [
     icon: Coins,
     category: "Local",
     color: "#FBBF24",
-    link: "https://maizefinance.com"
+    link: "#"
   },
   {
     name: "BETA: Industrial Chem",
@@ -47,7 +47,7 @@ const businesses = [
     icon: Leaf,
     category: "Marketplace",
     color: "#22C55E", 
-    link: "https://maizegreen.com"  
+    link: "#"  
   },
   {
     name: "AI Consulting",
@@ -55,7 +55,7 @@ const businesses = [
     icon: Brain,
     category: "Software Development",
     color: "#3B82F6", 
-    link: "https://maizegreen.com"  
+    link: "#"  
   },
 ];
 
